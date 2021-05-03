@@ -12,12 +12,20 @@ const user = {
   lastName: "Pandey"
 };
 
-const helloElement = <h1>Hello {formatName(user)} </h1>
+function clock() {
+  const helloElement = (
+    <div>
+      <h1>Hello {formatName(user)} </h1>
+      <h2>{new Date().toLocaleTimeString()}</h2>
+    </div>
+  );
+  ReactDOM.render(
+    helloElement,
+    document.getElementById('root')
+  );
+}
 
-ReactDOM.render(
-  helloElement,
-  document.getElementById('root')
-);
+setInterval(clock, 1000);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
