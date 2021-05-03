@@ -12,7 +12,7 @@ const user = {
   lastName: "Pandey"
 };
 
-function clock() {
+/* function clock() {
   const helloElement = (
     <div>
       <h1>Hello {formatName(user)} </h1>
@@ -25,7 +25,29 @@ function clock() {
   );
 }
 
-setInterval(clock, 1000);
+setInterval(clock, 1000); */
+
+/**
+ * A component must start with capital letter
+ * All components must start be a Pure function meanning they should not change their inputs. i.e. Props.
+ * Props are READ-ONLY. 
+ * */ 
+function Welcome(prop) { 
+  return <h1>Welcome {prop.name}</h1>
+}
+
+function Parent() {
+  return (
+    <div>
+      <Welcome name="Ash" />
+      <Welcome name="Soozi" />
+      <Welcome name="Bobby" />
+    </div>
+  );
+}
+
+ReactDOM.render(<Parent />, document.getElementById("root"));
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
